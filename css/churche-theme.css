@@ -1,0 +1,1213 @@
+/* Churche Theme - Life Grace Ministries UI Layer */
+@import url("https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+  --heading-font: "New Amsterdam", sans-serif;
+  --body-font: "Open Sans", sans-serif;
+  --main-h: 14;
+  --main-s: 84%;
+  --main-l: 56%;
+  --main-600: hsl(14, 84%, 56%);
+  --main-700: hsl(14, 84%, 46%);
+  --heading-color: #0d1a26;
+  --body-color: #666666;
+  --footer-bg: #0e1a26;
+  --heading-one: clamp(2.5rem, 1rem + 6vw, 5.5rem);
+  --heading-two: clamp(2rem, 0.7rem + 4vw, 3.5rem);
+  --heading-three: clamp(1.75rem, 0.5rem + 3vw, 2.75rem);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body-font);
+  color: var(--body-color);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6,
+.site-logo, .heading-xl, .heading-gallery, .heading-services,
+.heading-youth, .heading-gofundme, .heading-lordscity, .heading-counselling,
+.hero-title, .footer-brand {
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+  letter-spacing: 0.02em;
+}
+
+/* ===== Animations ===== */
+@keyframes borderanimate2 {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(2.2); opacity: 0; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes imgZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Section Subtitle (Churche pill badge) ===== */
+.section-subtitle,
+.label-orange, .label-orange-wide, .label-red, .label-red-narrow,
+.label-yellow, .label-cyan, .label-sky {
+  position: relative;
+  display: inline-block;
+  border: 1px solid rgba(4, 27, 52, 0.1);
+  border-radius: 30px;
+  padding: 5px 25px 5px 36px;
+  font-family: var(--body-font);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--main-600) !important;
+  background: transparent;
+}
+
+.section-subtitle .pulse-dot,
+.section-subtitle .pulse-dot::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.section-subtitle .pulse-dot {
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  background: var(--main-600);
+}
+
+.section-subtitle .pulse-dot::before {
+  left: 50%;
+  top: 50%;
+  width: 70%;
+  height: 70%;
+  background: rgba(237, 90, 47, 0.47);
+  animation: borderanimate2 2s linear infinite;
+}
+
+.section-subtitle.label-orange::before,
+.section-subtitle.label-orange::after,
+.section-subtitle.label-orange-wide::before,
+.section-subtitle.label-orange-wide::after {
+  display: none;
+}
+
+.label-orange:not(.section-subtitle)::before,
+.label-orange-wide:not(.section-subtitle)::before,
+.label-red:not(.section-subtitle)::before,
+.label-red-narrow:not(.section-subtitle)::before,
+.label-yellow:not(.section-subtitle)::before,
+.label-cyan:not(.section-subtitle)::before,
+.label-sky:not(.section-subtitle)::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  background: var(--main-600);
+  border-radius: 50%;
+}
+
+.label-orange:not(.section-subtitle)::after,
+.label-orange-wide:not(.section-subtitle)::after,
+.label-red:not(.section-subtitle)::after,
+.label-red-narrow:not(.section-subtitle)::after,
+.label-yellow:not(.section-subtitle)::after,
+.label-cyan:not(.section-subtitle)::after,
+.label-sky:not(.section-subtitle)::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translateY(-50%);
+  background: rgba(237, 90, 47, 0.47);
+  animation: borderanimate2 2s linear infinite;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* White subtitle on dark sections */
+.hero-welcome.section-subtitle {
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.hero-welcome.section-subtitle::before,
+.hero-welcome.section-subtitle::after {
+  display: none;
+}
+
+/* ===== Churche Buttons ===== */
+.tw-hover-btn {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--body-font);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  transition: color 0.4s ease;
+}
+
+.tw-hover-btn-circle-dot {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transition: all 0.6s ease-out;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background: var(--heading-color);
+}
+
+.tw-hover-btn:hover .tw-hover-btn-circle-dot {
+  width: 520px;
+  height: 520px;
+}
+
+.btn-churche-primary {
+  background: var(--main-600);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 0;
+}
+
+.btn-churche-primary .tw-hover-btn-circle-dot {
+  background: var(--heading-color);
+}
+
+.btn-churche-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 14px 32px;
+  border-radius: 0;
+}
+
+.btn-churche-dark {
+  background: var(--heading-color);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 0;
+}
+
+.btn-churche-dark .tw-hover-btn-circle-dot {
+  background: var(--main-600);
+}
+
+.btn-churche-white {
+  background: #fff;
+  color: var(--heading-color);
+  padding: 14px 32px;
+  border-radius: 0;
+}
+
+/* Override old rounded buttons */
+.btn-donate-header, .btn-join, .btn-donate-hero, .btn-learn-more,
+.btn-youth-join, .btn-youth-learn, .btn-join-service, .btn-donate-support,
+.btn-visit-lordscity, .btn-request-counselling, .btn-send, .btn-proceed-donate {
+  border-radius: 0 !important;
+  font-family: var(--body-font);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.btn-donate-header, .btn-join, .btn-learn-more, .btn-youth-join,
+.btn-send, .btn-proceed-donate, .btn-request-counselling {
+  background: var(--main-600) !important;
+  border: none !important;
+}
+
+.btn-donate-header:hover, .btn-join:hover, .btn-learn-more:hover,
+.btn-youth-join:hover, .btn-send:hover, .btn-proceed-donate:hover {
+  background: var(--main-700) !important;
+  transform: none !important;
+}
+
+/* ===== Header (Churche transparent + sticky) ===== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+  transition: all 0.35s ease;
+}
+
+.site-header.scrolled {
+  background: var(--heading-color);
+  backdrop-filter: blur(24px);
+  animation: slideDown 0.35s ease-out;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  border-bottom-color: var(--heading-color);
+}
+
+.site-logo {
+  font-family: var(--heading-font);
+  font-size: 1.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.desktop-nav a {
+  font-size: 0.95rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  position: relative;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+  color: var(--main-600) !important;
+}
+
+.desktop-nav a::after {
+  background: var(--main-600);
+}
+
+.btn-donate-header {
+  background: var(--main-600) !important;
+  padding: 12px 28px !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* ===== Hero / Banner (Churche layout: WE ARE / THE CHURCHE style) ===== */
+.hero-section {
+  min-height: 100vh;
+  height: auto;
+  overflow: visible;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-overlay {
+  background: rgba(13, 26, 38, 0.72) !important;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: clamp(110px, 12vh, 160px);
+  padding-bottom: clamp(40px, 6vh, 80px);
+  box-sizing: border-box;
+}
+
+/* Upper block: Welcome + Life Grace | subtitle + buttons */
+.hero-mid {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 3rem;
+  align-items: end;
+  width: 100%;
+  min-height: 0;
+  padding-bottom: clamp(1rem, 3vh, 2.5rem);
+}
+
+.hero-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+  min-height: clamp(200px, 32vh, 380px);
+}
+
+.hero-welcome {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 40px;
+  padding: 7px 29px 7px 35px;
+  display: inline-block;
+  font-size: 0.8rem !important;
+  letter-spacing: 3px !important;
+  color: #fff !important;
+  position: relative;
+  margin: 0;
+  align-self: flex-start;
+}
+
+/* "WE ARE" style — above bottom title */
+.hero-line-one {
+  font-family: var(--heading-font);
+  font-size: clamp(2.8rem, 9vw, 8.5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.02em;
+}
+
+/* Right: text above buttons, both above "Ministries" */
+.hero-right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 1.25rem;
+  max-width: 520px;
+  margin-left: auto;
+  width: 100%;
+}
+
+.hero-subtitle-wrap {
+  width: 100%;
+  min-height: 5.5em;
+  max-height: 5.5em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.hero-subtitle {
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  line-height: 1.65;
+  margin: 0 !important;
+  max-width: 100% !important;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.9);
+  transition: opacity 0.4s ease;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  margin-top: 0 !important;
+}
+
+/* "THE CHURCHE" style — huge bottom title */
+.hero-line-two {
+  flex-shrink: 0;
+  width: 100%;
+  text-align: center;
+  font-family: var(--heading-font);
+  font-size: clamp(3.2rem, 11vw, 10rem);
+  line-height: 0.92;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.02em;
+  overflow: visible;
+}
+
+/* Legacy class aliases */
+.hero-title-bottom,
+.hero-title-line,
+.hero-title-line-2 { display: none; }
+
+.hero-text-wrap { text-align: center; width: 100%; }
+
+.hero-title {
+  font-size: clamp(3.5rem, 8vw, 9rem);
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.hero-title-white,
+.hero-title-gradient {
+  color: #fff;
+  background: none;
+  -webkit-text-fill-color: #fff;
+  display: block;
+}
+
+/* Header logo vertical center */
+.site-logo {
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.header-inner {
+  align-items: center;
+}
+
+/* Legacy hero classes - keep compatible */
+.hero-text-wrap { text-align: center; width: 100%; }
+
+.hero-title {
+  font-size: clamp(3.5rem, 8vw, 9rem);
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.hero-title-white,
+.hero-title-gradient {
+  color: #fff;
+  background: none;
+  -webkit-text-fill-color: #fff;
+  display: block;
+}
+
+/* ===== Section Headings ===== */
+.heading-xl {
+  font-size: var(--heading-two);
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.heading-gallery, .heading-services, .heading-youth,
+.heading-gofundme, .heading-lordscity, .heading-counselling {
+  font-size: var(--heading-two);
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.text-orange { color: var(--main-600) !important; }
+
+.text-body, .text-body-mt {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--body-color);
+}
+
+/* ===== Image Hover Effects (Churche style) ===== */
+.img-hover-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.img-hover-wrap img,
+.leader-img-wrap img,
+.rev-card img,
+.worship-img-wrap img,
+.service-hero-card img,
+.gallery-slide-card img,
+.youth-img,
+.about-img-main,
+.about-img-small {
+  transition: transform 0.7s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.img-hover-wrap:hover img,
+.leader-img-wrap:hover img,
+.worship-img-wrap:hover img,
+.service-hero-card:hover img,
+.gallery-slide-card:hover img,
+.youth-img:hover,
+.rev-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Team card hover like Churche */
+.rev-card, .leader-img-wrap, .service-hero-card {
+  overflow: hidden;
+}
+
+/* ===== Cards ===== */
+.mission-card {
+  background: var(--main-600) !important;
+  border-radius: 0 !important;
+}
+
+.vision-card {
+  border-left: 4px solid var(--main-600) !important;
+  border-radius: 0 !important;
+}
+
+.stat-card, .contact-card, .service-card, .donate-card,
+.counselling-left, .counselling-right, .contact-form-wrap,
+.learn-more-content, .youth-expand, .gofundme-card {
+  border-radius: 0 !important;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-card:hover, .donate-card:hover, .contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(13, 26, 38, 0.12);
+}
+
+.service-card {
+  background: #f8f1e6 !important;
+}
+
+.service-title { color: var(--main-600) !important; }
+.service-link { color: var(--main-600) !important; }
+
+/* ===== Sections Background ===== */
+.section-our-church { background: #fff; padding: 100px 0; }
+.section-leadership { background: #f8f1e6; padding: 100px 0; }
+.section-gallery { background: #fff; padding: 100px 0; }
+.section-services { background: var(--heading-color) !important; padding: 100px 0; }
+.section-youth { padding: 100px 0; }
+.section-sunday, .section-thursday { padding: 100px 0; }
+.section-gofundme { background: var(--heading-color) !important; padding: 100px 0; }
+.section-lordscity { background: #f8f1e6; padding: 100px 0; }
+.section-counselling { background: #fff; padding: 100px 0; }
+.section-contact { background: #f8f1e6; padding: 100px 0; }
+
+.section-services .heading-services,
+.section-gofundme .heading-gofundme {
+  color: #fff;
+}
+
+/* ===== Gallery Swiper ===== */
+.gallery-slide-card {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.gallery-slide-card:hover {
+  transform: translateY(-10px);
+}
+
+.swiper-button-next, .swiper-button-next::after,
+.swiper-button-prev, .swiper-button-prev::after {
+  color: var(--main-600) !important;
+}
+
+/* ===== Service Hero Cards ===== */
+.service-hero-card { border-radius: 0 !important; }
+.badge-float, .badge-red, .time-badge { border-radius: 0 !important; }
+.badge-red, .time-badge { background: var(--main-600) !important; }
+
+/* ===== GoFundMe ===== */
+.gofundme-card {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0 !important;
+}
+
+.donate-card h3 { font-family: var(--heading-font); }
+
+/* ===== Lord's City ===== */
+.lordscity-divider { background: var(--main-600) !important; height: 3px; }
+.video-main-wrap { border-radius: 0 !important; }
+.video-thumb.active { outline-color: var(--main-600) !important; }
+.location-card { border-radius: 0 !important; }
+
+.btn-visit-lordscity {
+  background: var(--main-600) !important;
+  border-radius: 0 !important;
+}
+
+/* ===== Counselling ===== */
+.counselling-right {
+  background: var(--main-600) !important;
+  border-radius: 0 !important;
+}
+
+.help-icon { background: rgba(255, 255, 255, 0.2) !important; }
+
+/* ===== Contact Form ===== */
+.form-input {
+  border-radius: 0 !important;
+  border: 1px solid rgba(13, 26, 38, 0.15);
+  font-family: var(--body-font);
+}
+
+.form-input:focus {
+  border-color: var(--main-600) !important;
+  box-shadow: 0 0 0 3px rgba(237, 90, 47, 0.15);
+}
+
+.map-wrap { border-radius: 0 !important; }
+
+/* ===== Footer (Churche style) ===== */
+.site-footer {
+  background: var(--footer-bg) !important;
+  padding-top: 80px;
+}
+
+.footer-blur { display: none; }
+
+.footer-brand {
+  color: var(--main-600) !important;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.footer-heading {
+  font-family: var(--heading-font);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.footer-links a:hover { color: var(--main-600) !important; }
+
+.social-icon {
+  border-radius: 0 !important;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: var(--main-600) !important;
+  transform: translateY(-4px);
+  box-shadow: none !important;
+}
+
+.btn-scroll-top {
+  border-radius: 0 !important;
+  background: var(--main-600) !important;
+  animation: none !important;
+  width: 50px;
+  height: 50px;
+  font-size: 1.25rem;
+}
+
+.footer-credit a { color: var(--main-600) !important; }
+
+.dev-credit {
+  text-align: center;
+  padding: 20px 0 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+.dev-credit a {
+  color: var(--main-600);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dev-credit a:hover { text-decoration: underline; }
+
+/* ===== Modal ===== */
+.modal-box { border-radius: 0 !important; }
+.amount-btn { border-radius: 0 !important; }
+.btn-proceed-donate { border-radius: 0 !important; background: var(--main-600) !important; }
+
+/* ===== Scroll reveal helper ===== */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 991px) {
+  .hero-mid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .hero-left-col {
+    min-height: auto;
+    gap: 1.5rem;
+  }
+
+  .hero-line-one {
+    font-size: clamp(2.5rem, 14vw, 4.5rem);
+  }
+
+  .hero-line-two {
+    font-size: clamp(2.8rem, 16vw, 5.5rem);
+    margin-top: 1rem;
+  }
+
+  .hero-right-col {
+    align-items: flex-start;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .hero-subtitle-wrap {
+    min-height: 4.5em;
+    max-height: none;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .hero-subtitle { text-align: left; }
+  .hero-buttons { justify-content: flex-start; }
+
+  .hero-content {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    min-height: 100vh;
+  }
+
+  .section-our-church, .section-leadership, .section-gallery,
+  .section-services, .section-youth, .section-sunday,
+  .section-thursday, .section-gofundme, .section-lordscity,
+  .section-counselling, .section-contact { padding: 70px 0; }
+}
+
+@media (min-width: 992px) {
+  .hero-line-one {
+    letter-spacing: 0.02em;
+  }
+
+  .hero-line-two {
+    letter-spacing: 0.02em;
+  }
+}
+
+/* ===== Mobile & Tablet — no image clipping or overlap ===== */
+@media (max-width: 991px) {
+  .about-images {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .about-img-main,
+  .about-img-small {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 0;
+    border-width: 0;
+  }
+
+  .about-deco-circle {
+    display: none;
+  }
+
+  .leader-img-wrap img,
+  .rev-card img {
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+  }
+
+  .service-hero-card img {
+    height: auto;
+    min-height: 300px;
+    max-height: 520px;
+    object-fit: cover;
+  }
+
+  .worship-img-wrap img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  .map-wrap iframe {
+    height: 360px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container-main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .header-inner {
+    height: auto;
+    min-height: 4.25rem;
+    gap: 0.5rem;
+  }
+
+  .site-logo {
+    font-size: clamp(0.75rem, 3.5vw, 1.1rem);
+    letter-spacing: 1px;
+    max-width: calc(100% - 5.5rem);
+    word-break: break-word;
+  }
+
+  .btn-donate-header {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.7rem !important;
+    letter-spacing: 0.5px !important;
+    white-space: nowrap;
+  }
+
+  .mobile-menu-btn {
+    font-size: 1.5rem;
+    padding: 0.25rem;
+  }
+
+  .heading-xl {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    word-break: break-word;
+  }
+
+  .section-leadership h3.heading-xl,
+  .section-leadership h3[style*="font-size"] {
+    font-size: clamp(1.75rem, 7vw, 2.5rem) !important;
+  }
+
+  .service-hero-content h2[style*="font-size"] {
+    font-size: clamp(1.5rem, 7vw, 2.25rem) !important;
+  }
+
+  .heading-gallery,
+  .heading-services,
+  .heading-youth,
+  .heading-gofundme,
+  .heading-lordscity,
+  .heading-counselling {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+  }
+
+  .text-body,
+  .text-body-mt {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .mission-card,
+  .vision-card {
+    padding: 1.5rem;
+  }
+
+  .mission-card h3,
+  .vision-card h3 {
+    font-size: 1.5rem !important;
+  }
+
+  .mission-card p,
+  .vision-card p {
+    font-size: 1rem !important;
+    line-height: 1.75 !important;
+  }
+
+  /* Leadership images */
+  .leader-img-wrap img,
+  .rev-card img {
+    height: auto;
+    min-height: 220px;
+    max-height: 420px;
+    object-fit: cover;
+  }
+
+  .section-heading-center {
+    margin-bottom: 2.5rem;
+  }
+
+  .stat-card {
+    flex: 1 1 100%;
+    padding: 1rem 1.25rem;
+  }
+
+  /* Gallery */
+  .gallery-slide-card img {
+    height: auto;
+    min-height: 200px;
+    max-height: 280px;
+    object-fit: cover;
+  }
+
+  .gallery-swiper {
+    padding-bottom: 2.5rem;
+    overflow: hidden;
+  }
+
+  /* Service cards */
+  .service-card {
+    padding: 1.5rem;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Youth */
+  .youth-img {
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-youth-join,
+  .btn-youth-learn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Sunday / Thursday hero cards */
+  .service-hero-card img {
+    height: auto;
+    min-height: 280px;
+    max-height: 480px;
+    object-fit: cover;
+  }
+
+  .service-hero-content {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    max-width: none;
+    padding: 0;
+  }
+
+  .service-hero-content h2 {
+    font-size: clamp(1.5rem, 7vw, 2.25rem) !important;
+    margin-top: 0.75rem !important;
+  }
+
+  .service-hero-content p {
+    font-size: 1rem !important;
+    margin-top: 0.75rem !important;
+  }
+
+  .badge-float {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .time-badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-join-service {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  /* GoFundMe */
+  .gofundme-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .gofundme-desc {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .donate-card {
+    padding: 1.5rem;
+  }
+
+  /* Video carousel */
+  .video-thumb {
+    width: 100px;
+    height: 64px;
+  }
+
+  .video-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .location-card {
+    padding: 1.25rem;
+  }
+
+  .location-card p {
+    font-size: 1rem !important;
+  }
+
+  /* Counselling */
+  .counselling-left,
+  .counselling-right {
+    padding: 1.5rem;
+  }
+
+  .counselling-right .row .col-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .stat-box h4 {
+    font-size: 1.75rem;
+  }
+
+  .btn-request-counselling {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* Contact */
+  .contact-card {
+    padding: 1.5rem;
+  }
+
+  .contact-card p {
+    font-size: 1rem !important;
+  }
+
+  .contact-form-wrap {
+    padding: 1.5rem;
+  }
+
+  .map-wrap iframe {
+    height: 280px;
+  }
+
+  /* Modal */
+  .modal-box {
+    padding: 1.5rem;
+    margin: 0 0.75rem;
+  }
+
+  .modal-box .col-4 {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+
+  /* Footer */
+  .footer-brand {
+    font-size: 1.5rem;
+  }
+
+  .footer-desc {
+    line-height: 1.75;
+  }
+
+  /* Buttons full-width on small screens */
+  .hero-buttons {
+    width: 100%;
+  }
+
+  .hero-buttons .btn-join,
+  .hero-buttons .btn-donate-hero {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.8rem;
+  }
+
+  .tw-hover-btn:hover .tw-hover-btn-circle-dot {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-logo {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+  }
+
+  .btn-donate-header {
+    padding: 0.45rem 0.6rem !important;
+    font-size: 0.65rem !important;
+  }
+
+  .hero-line-one {
+    font-size: clamp(2rem, 12vw, 3rem);
+  }
+
+  .hero-line-two {
+    font-size: clamp(2.2rem, 14vw, 3.5rem);
+  }
+
+  .hero-welcome {
+    font-size: 0.7rem !important;
+    padding: 5px 18px 5px 28px;
+    letter-spacing: 2px !important;
+  }
+
+  .section-subtitle,
+  .label-orange,
+  .label-orange-wide,
+  .label-red,
+  .label-red-narrow,
+  .label-yellow,
+  .label-cyan,
+  .label-sky {
+    font-size: 0.75rem;
+    padding: 4px 16px 4px 30px;
+  }
+
+  .video-thumbs {
+    gap: 0.5rem;
+  }
+
+  .video-thumb {
+    width: 72px;
+    height: 48px;
+  }
+}
+
+/* iOS safe area + prevent horizontal overflow */
+@supports (padding: env(safe-area-inset-left)) {
+  .container-main {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .site-header {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.carousel-video {
+  max-width: 100%;
+}
