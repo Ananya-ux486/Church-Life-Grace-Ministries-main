@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>LifeGrace Ministries</title>
+  <meta name="description" content="LifeGrace Ministries church website with worship services, events, donations and contact information.">
+  <meta name="keywords" content="Church, Ministry, Worship, Donations, Faith, LifeGrace Ministries">
+  <link rel="icon" href="public/favicon.svg" type="image/svg+xml">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/churche-theme.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <canvas id="cursor-glow-canvas" class="cursor-glow-canvas" aria-hidden="true"></canvas>
+  <div id="custom-cursor" class="custom-cursor is-hidden" aria-hidden="true">
+    <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 2v13l4.2-3.2 2.8 5.2 2.2-1.1-2.6-4.9h5.4z" fill="hsl(215, 72%, 28%)" stroke="hsl(205, 90%, 55%)" stroke-width="0.9" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <!-- Header -->
+  <header id="site-header" class="site-header">
+    <div class="container-main">
+      <div class="header-inner">
+        <h1 class="site-logo"><span class="logo-brand">LifeGrace</span> Ministries</h1>
+
+        <nav class="desktop-nav">
+          <a href="#home">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#services">Services</a>
+          <a href="#events">Events</a>
+          <a href="#lordscity">Lord's City</a>
+          <a href="#counselling">Counselling</a>
+          <a href="#contact">Contact Us</a>
+        </nav>
+
+        <div class="header-actions">
+          <button id="header-donate-btn" type="button" class="btn-donate-header tw-hover-btn btn-churche-primary" data-open-donate>Donate Now<span class="tw-hover-btn-circle-dot"></span></button>
+          <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Menu">☰</button>
+        </div>
+      </div>
+
+      <nav id="mobile-nav" class="mobile-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#events">Events</a>
+        <a href="#lordscity">Lord's City</a>
+        <a href="#counselling">Counselling</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero-section">
+    <div class="hero-media" aria-hidden="true">
+      <img id="hero-bg-img-a" class="hero-bg-img is-active" src="assets/about3.png" alt="">
+      <img id="hero-bg-img-b" class="hero-bg-img" src="" alt="">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container-main hero-content">
+      <div class="hero-mid">
+        <div class="hero-left-col">
+          <p class="hero-welcome section-subtitle"><span class="pulse-dot"></span>Welcome To</p>
+          <h2 class="hero-line-one">LifeGrace</h2>
+          <h1 class="hero-line-two hero-line-two-mobile">Ministries</h1>
+        </div>
+        <div class="hero-right-col">
+          <div class="hero-subtitle-wrap">
+            <p id="hero-slide-text" class="hero-subtitle">Welcome to LifeGrace Ministries. Experience faith, worship and spiritual transformation.</p>
+          </div>
+          <div class="hero-buttons">
+            <button class="btn-join tw-hover-btn btn-churche-primary" data-scroll="contact">Join Us<span class="tw-hover-btn-circle-dot"></span></button>
+            <button type="button" class="btn-donate-hero tw-hover-btn btn-churche-outline" data-open-donate>Donate Now<span class="tw-hover-btn-circle-dot"></span></button>
+          </div>
+        </div>
+      </div>
+      <h1 class="hero-line-two hero-line-two-desktop">Ministries</h1>
+    </div>
+  </section>
+
+  <!-- Our Church -->
+  <section id="about" class="section-our-church">
+    <div class="container-main">
+      <div class="about-block about-block-main row g-5 align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="about-images img-hover-wrap">
+            <img src="assets/about3.png" alt="Church" class="about-img-main">
+            <img src="assets/about1.jpg" alt="Ministry" class="about-img-small">
+            <div class="about-deco-circle"></div>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <span class="label-orange section-subtitle"><span class="pulse-dot"></span>ABOUT OUR CHURCH</span>
+          <h2 class="heading-xl">Faith, Hope &amp; <span class="text-orange">Love</span></h2>
+          <p class="text-body">Life Grace Ministries International is dedicated to spreading the Gospel of Jesus Christ, transforming lives and building a strong community of believers through worship, prayer and service.</p>
+          <p class="text-body-mt">Through faith-centered teaching, leadership development and outreach programs, we help individuals discover God's purpose and strengthen their spiritual journey.</p>
+          <p class="text-body-mt">Our mission is to bring hope, healing and encouragement to families and communities while creating an environment where everyone can experience God's love and grace.</p>
+        </div>
+      </div>
+
+      <div class="about-block about-block-mission row g-4 mt-5">
+        <div class="col-md-6" data-aos="fade-up">
+          <div class="mission-card">
+            <span class="label-orange section-subtitle" style="color: #ffedd5 !important; letter-spacing: 3px;"><span class="pulse-dot"></span>Our Mission</span>
+            <h3 class="mt-3" style="font-size: 2.25rem; font-weight: 900;">Transforming Lives</h3>
+            <p class="mt-3" style="font-size: 1.125rem; line-height: 2rem; color: #fff7ed;">Our mission is to share the Gospel of Jesus Christ, strengthen believers through prayer, worship and discipleship, and serve communities with love, compassion and faith.</p>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="150">
+          <div class="vision-card">
+            <span class="label-orange section-subtitle" style="letter-spacing: 3px;"><span class="pulse-dot"></span>Our Vision</span>
+            <h3 class="mt-3" style="font-size: 2.25rem; font-weight: 900; color: #111827;">Building God's Kingdom</h3>
+            <p class="mt-3" style="font-size: 1.125rem; line-height: 2rem; color: #4b5563;">Our vision is to build a Christ-centered community where individuals and families grow in faith, experience God's love and discover their purpose.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-block about-block-worship row g-5 align-items-center">
+        <div class="col-lg-6 order-lg-1 order-2">
+          <span class="label-orange section-subtitle"><span class="pulse-dot"></span>WORSHIP WITH US</span>
+          <h2 class="heading-xl about-worship-title">Growing Together <span class="text-orange">In Faith</span></h2>
+          <p class="text-body">Join us every week for powerful worship services, prayer meetings, youth gatherings and community outreach programs that strengthen faith and bring people closer to God.</p>
+        </div>
+        <div class="col-lg-6 order-lg-2 order-1">
+          <div class="worship-img-wrap img-hover-wrap about-worship-media">
+            <img src="assets/about2.jpg" alt="Church Worship" class="worship-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section class="section-leadership">
+    <div class="container-main">
+      <div class="section-heading-center">
+        <span class="label-orange-wide">Church Leadership</span>
+        <h2 class="heading-xl" style="color: #111827;">Meet Our <span class="text-orange">Leaders</span></h2>
+        <p class="text-body-mt" style="max-width: 48rem; margin-left: auto; margin-right: auto;">Dedicated servants of God leading Life Grace Ministries International with faith, vision and compassion.</p>
+      </div>
+
+      <div class="row g-5 align-items-center mb-5 pb-4 leadership-row-bishop">
+        <div class="col-lg-6 leadership-bishop-copy">
+          <span class="label-orange" style="letter-spacing: 4px;">Founder &amp; Spiritual Leader</span>
+          <h3 class="heading-xl" style="font-size: 3rem; color: #111827;">Bishop Dr. V. Odumma</h3>
+          <p class="text-body">Bishop Dr. V. Odumma is the founder and spiritual leader of Life Grace Ministries International. Through prayer, teaching and community outreach, he has dedicated his life to spreading the Gospel and helping people discover their purpose in Christ.</p>
+          <div class="d-flex gap-4 flex-wrap mt-4">
+            <div class="stat-card">
+              <h4 class="stat-number">15+</h4>
+              <p class="text-body-mt" style="margin-top: 0;">Years Ministry</p>
+            </div>
+            <div class="stat-card">
+              <h4 class="stat-number">Global</h4>
+              <p class="text-body-mt" style="margin-top: 0;">Outreach Mission</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 leadership-bishop-photo">
+          <div class="leader-img-wrap">
+            <img src="assets/bisoph1.jpeg" alt="Bishop Dr. V. Odumma">
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-5 align-items-center leadership-row-rev">
+        <div class="col-lg-6 order-lg-1 order-2">
+          <div class="rev-card leadership-photo-card">
+            <div class="leadership-photo-wrap">
+              <img src="assets/rev-grace.jpg" alt="Reverend Grace Vitalis" class="leadership-rev-photo" onerror="this.onerror=null;this.src='assets/about3.png';">
+            </div>
+            <div class="rev-card-info">
+              <h3>Reverend Grace Vitalis</h3>
+              <p class="text-orange leadership-role">Ministry Leader &amp; Woman of Faith</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-2 order-1 leadership-copy">
+          <span class="label-orange leadership-label">Ministry Leadership</span>
+          <h3 class="heading-xl leadership-name">Reverend <span class="text-orange">Grace Vitalis</span></h3>
+          <p class="text-body">Reverend Grace Vitalis serves faithfully alongside the ministry, inspiring believers through worship, prayer, leadership and compassionate service.</p>
+          <p class="text-body-mt">Her passion for faith, encouragement and spiritual growth has impacted many lives and continues to strengthen the ministry's vision both locally and internationally.</p>
+          <button id="leadership-learn-more" class="btn-learn-more tw-hover-btn btn-churche-primary">Learn More<span class="tw-hover-btn-circle-dot"></span></button>
+          <div id="leadership-more-content" class="learn-more-content d-none">
+            <h4>Expanding God's Kingdom Through Love &amp; Service</h4>
+            <p class="text-body-mt" style="margin-top: 0;">Reverend Grace Vitalis plays a vital role in supporting the vision of Life Grace Ministries International. Through worship leadership, prayer ministry and community outreach, she encourages believers to grow deeper in their relationship with God and live lives filled with faith, hope and purpose.</p>
+            <p class="text-body-mt">Her ministry focuses on empowering women, strengthening families, mentoring young people and extending compassion to those in need. She continues to inspire individuals through biblical teachings, prayer gatherings and spiritual encouragement.</p>
+            <p class="text-body-mt">Together with the leadership team, she supports outreach programs, community development initiatives and faith-based projects that impact lives both locally and internationally.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section-gallery">
+    <div class="container-main">
+      <div class="text-center mb-5">
+        <span class="label-red">Photo Gallery</span>
+        <h2 class="heading-gallery">Gallery</h2>
+        <p class="text-body-mt" style="max-width: 42rem; margin-left: auto; margin-right: auto;">Moments of worship, fellowship and community. Glimpses of God's faithfulness in our lives.</p>
+      </div>
+
+      <div class="swiper gallery-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><div class="gallery-slide-card"><img src="assets/about3.png" alt="Gallery 1"></div></div>
+          <div class="swiper-slide"><div class="gallery-slide-card"><img src="assets/sunday.jpg" alt="Gallery 2"></div></div>
+          <div class="swiper-slide"><div class="gallery-slide-card"><img src="assets/thursday.jpg" alt="Gallery 3"></div></div>
+          <div class="swiper-slide"><div class="gallery-slide-card"><img src="assets/gallery1.jpg" alt="Gallery 4"></div></div>
+          <div class="swiper-slide"><div class="gallery-slide-card"><img src="assets/gallery2.jpg" alt="Gallery 5"></div></div>
+          <div class="swiper-slide"><div class="gallery-slide-card"><img src="assets/gallery3.jpg" alt="Gallery 6"></div></div>
+          <div class="swiper-slide"><div class="gallery-slide-card"><img src="assets/gallery4.jpg" alt="Gallery 7"></div></div>
+          <div class="swiper-slide"><div class="gallery-slide-card"><img src="assets/gallery5.jpg" alt="Gallery 8"></div></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Services -->
+  <section id="services" class="section-services">
+    <div class="container-main">
+      <div class="services-intro text-center">
+        <span class="label-yellow section-subtitle"><span class="pulse-dot"></span>What We Do</span>
+        <h2 class="heading-services">Services</h2>
+        <p class="services-tagline">Worship, fellowship and spiritual growth — join us in person every week.</p>
+      </div>
+
+      <div class="row g-4 services-schedule-row justify-content-center">
+        <div class="col-lg-6" data-aos="fade-up">
+          <article class="service-schedule-card service-schedule-sunday">
+            <h3 class="service-schedule-title">Sunday Service</h3>
+            <div class="service-schedule-time service-schedule-time-stacked">
+              <span class="service-time-from">10:30 AM</span>
+              <span class="service-time-to-label">To</span>
+              <span class="service-time-to">1:00 PM</span>
+            </div>
+            <p class="service-schedule-desc">Join us every Sunday for powerful worship, prayer, teaching and spiritual growth.</p>
+            <button type="button" class="service-schedule-link" data-scroll="sundayservice">View Sunday Service →</button>
+          </article>
+        </div>
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <article class="service-schedule-card service-schedule-thursday">
+            <h3 class="service-schedule-title">Thursday Services</h3>
+            <div class="service-schedule-time service-schedule-time-stacked">
+              <span class="service-time-from">7:00 PM</span>
+              <span class="service-time-to-label">To</span>
+              <span class="service-time-to">9:00 PM</span>
+            </div>
+            <p class="service-schedule-desc">Wonders &amp; Deliverance Night — prayer, breakthrough and spiritual renewal.</p>
+            <button type="button" class="service-schedule-link" data-scroll="thursdayservice">View Thursday Service →</button>
+          </article>
+        </div>
+      </div>
+
+      <div class="services-ministry-row row g-4 mt-2">
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card" data-scroll-section="youthservices">
+            <div class="service-icon">🎵</div>
+            <h3 class="service-title">Praise &amp; Worship</h3>
+            <p class="service-desc">Uplifting praise with our ministry worship team every service.</p>
+            <p class="service-link">Learn More →</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card" data-scroll-section="youthservices">
+            <div class="service-icon">📖</div>
+            <h3 class="service-title">Bible Study</h3>
+            <p class="service-desc">Interactive teaching and discussion rooted in God's word.</p>
+            <p class="service-link">Learn More →</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card" data-scroll-section="counselling">
+            <div class="service-icon">🙏</div>
+            <h3 class="service-title">Prayer Ministry</h3>
+            <p class="service-desc">Dedicated prayer support for individuals and families.</p>
+            <p class="service-link">Learn More →</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card" data-scroll-section="gofundme">
+            <div class="service-icon">❤️</div>
+            <h3 class="service-title">Community Outreach</h3>
+            <p class="service-desc">Serving communities with compassion, faith and practical support.</p>
+            <p class="service-link">Learn More →</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section id="events" class="section-events">
+    <div class="container-main">
+      <div class="events-intro text-center">
+        <span class="label-orange section-subtitle"><span class="pulse-dot"></span>Church Calendar</span>
+        <h2 class="heading-xl events-heading">Events</h2>
+      </div>
+
+      <div class="events-content-required">
+        <p class="events-required-label">Events content required</p>
+        <p class="events-required-text">Upcoming church events, conferences and special programmes will be listed here. For the latest dates and announcements, please contact the ministry office.</p>
+        <button type="button" class="btn-join tw-hover-btn btn-churche-primary" data-scroll="contact">Contact Us For Events<span class="tw-hover-btn-circle-dot"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Youth Services -->
+  <section id="youthservices" class="section-youth">
+    <div class="container-main">
+      <div class="row g-5 align-items-center">
+        <div class="col-md-6">
+          <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18" alt="Youth Ministry" class="youth-img">
+        </div>
+        <div class="col-md-6">
+          <span class="label-red-narrow">Next Generation</span>
+          <h2 class="heading-youth">Youth Services</h2>
+          <p class="text-body-mt">Our Youth Ministry empowers young people to grow spiritually, develop leadership skills, and build meaningful relationships through worship, fellowship, outreach and discipleship.</p>
+          <div class="d-flex gap-3 flex-wrap mt-4">
+            <button class="btn-youth-join" data-scroll="contact">Join Youth Ministry</button>
+            <button id="youth-learn-more" class="btn-youth-learn">Learn More</button>
+          </div>
+          <div id="youth-more-content" class="youth-expand d-none">
+            <h3>Youth Ministry Activities</h3>
+            <ul>
+              <li>✅ Weekly Youth Fellowship &amp; Worship</li>
+              <li>✅ Leadership Development Programs</li>
+              <li>✅ Bible Study &amp; Prayer Sessions</li>
+              <li>✅ Community Outreach Activities</li>
+              <li>✅ Mentorship &amp; Spiritual Growth</li>
+              <li>✅ Music, Arts &amp; Creative Ministry</li>
+              <li>✅ Youth Conferences &amp; Special Events</li>
+            </ul>
+            <p class="text-body-mt">Our vision is to raise a generation of young people who are spiritually grounded, purpose-driven and committed to making a positive impact in their communities through faith and service.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sunday Service -->
+  <section id="sundayservice" class="section-sunday">
+    <div class="container-main">
+      <div class="service-hero-card">
+        <img src="assets/sunday.jpg" alt="Sunday Service">
+        <div class="service-hero-overlay"></div>
+        <div class="badge-float">Every Sunday</div>
+        <div class="service-hero-content">
+          <span style="text-transform: uppercase; letter-spacing: 4px; color: #fde047; font-weight: 600;">Worship With Us</span>
+          <h2 style="font-size: 3rem; font-weight: 900; color: #fff; margin-top: 1rem; line-height: 1.1;">
+            Power Sunday<br><span style="color: #facc15;">Service</span>
+          </h2>
+          <p style="color: #e5e7eb; font-size: 1.25rem; margin-top: 1.25rem;">Experience powerful worship, prayer, miracles and spiritual growth every Sunday.</p>
+          <div class="d-flex gap-3 mt-4 flex-wrap align-items-center">
+            <div class="time-badge">10:30 AM – 1:00 PM</div>
+            <button class="btn-join-service tw-hover-btn btn-churche-white" data-scroll="contact">Join Service<span class="tw-hover-btn-circle-dot"></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thursday Service -->
+  <section id="thursdayservice" class="section-thursday">
+    <div class="container-main">
+      <div class="service-hero-card">
+        <img src="assets/thursday.jpg" alt="Thursday Service">
+        <div class="service-hero-overlay service-hero-overlay-dark"></div>
+        <div class="service-hero-content">
+          <span class="badge-red">Every Thursday</span>
+          <h2 style="font-size: 3rem; font-weight: 900; color: #fff; margin-top: 1.5rem; line-height: 1.1;">
+            Wonders &amp;<br>Deliverance Night
+          </h2>
+          <p style="color: #fdba74; font-size: 1.35rem; margin-top: 1rem; font-weight: 600;">7:00 PM – 9:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donations -->
+  <section id="gofundme" class="section-gofundme">
+    <div class="container-main">
+      <div class="gofundme-card">
+        <div class="text-center">
+          <span class="label-cyan">Support Our Mission</span>
+          <h2 class="heading-gofundme">Give With Purpose</h2>
+          <p class="gofundme-desc">Choose where your gift goes — support the Lord's City development project or give directly to LifeGrace Ministries church ministry.</p>
+        </div>
+
+        <div class="row g-4 mt-4 justify-content-center">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0">
+            <article class="donate-path-card donate-path-lords">
+              <span class="donate-path-label">Lord's City Project</span>
+              <h3>Please Go Fund Me</h3>
+              <p class="donate-path-desc">Fund the Lord's City Adoration Ground in Amiri, Imo State — school, hospital, skills centre, church and community development (Phase one: £100,000).</p>
+              <a href="https://pleasegofundme.com/#lords-city-adoration-ground" class="btn-donate-path tw-hover-btn btn-churche-white" target="_blank" rel="noopener noreferrer">Donate to Lord's City<span class="tw-hover-btn-circle-dot"></span></a>
+            </article>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+            <article class="donate-path-card donate-path-church">
+              <span class="donate-path-label">Church Ministry</span>
+              <h3>LifeGrace Ministries</h3>
+              <p class="donate-path-desc">Support worship, outreach, families, youth and ministry programmes through the official LifeGrace Ministries donation page.</p>
+              <a href="https://www.lifegraceministries.com/" class="btn-donate-path tw-hover-btn btn-churche-primary" target="_blank" rel="noopener noreferrer">Donate to the Church<span class="tw-hover-btn-circle-dot"></span></a>
+              <p class="donate-path-bank">Bank transfer (UK): NatWest · Sort code 60-23-19 · Account 44160666 · Life Grace Ministries International</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <button type="button" id="open-donate-modal" class="btn-donate-support tw-hover-btn btn-churche-white" data-open-donate>Choose Where To Give<span class="tw-hover-btn-circle-dot"></span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donation Modal -->
+  <div id="donate-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="donate-modal-title">
+    <div class="modal-box modal-box-donate">
+      <button type="button" id="close-donate-modal" class="modal-close" aria-label="Close">×</button>
+      <h2 id="donate-modal-title" class="modal-title">Choose Where To Give</h2>
+      <p class="modal-desc">Your gift makes a difference. Select the cause you would like to support — each button opens the official secure donation page in a new tab.</p>
+
+      <div class="donate-modal-options">
+        <button type="button" class="donate-modal-option donate-modal-lords" data-donate-target="lordsCity">
+          <span class="donate-modal-option-label">Lord's City Project</span>
+          <strong>Please Go Fund Me</strong>
+          <span class="donate-modal-option-desc">Lord's City Adoration Ground development in Imo State, Nigeria.</span>
+        </button>
+        <button type="button" class="donate-modal-option donate-modal-church" data-donate-target="church">
+          <span class="donate-modal-option-label">Church Ministry</span>
+          <strong>LifeGrace Ministries</strong>
+          <span class="donate-modal-option-desc">Worship, outreach, families and youth ministry programmes.</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lord's City -->
+  <section id="lordscity" class="section-lordscity">
+    <div class="lordscity-blur-1"></div>
+    <div class="lordscity-blur-2"></div>
+    <div class="container-main lordscity-inner">
+      <div class="lordscity-intro text-center">
+        <span class="label-sky section-subtitle"><span class="pulse-dot"></span>The Lord's City</span>
+        <h2 class="heading-lordscity">The Lord's City Adoration Ground</h2>
+        <div class="lordscity-divider"></div>
+      </div>
+
+      <div class="lordscity-official-copy">
+        <p class="lordscity-location-line"><strong>Amiri Village, Oru East LGA, Imo State, Nigeria</strong></p>
+        <p class="lordscity-overseers-line"><strong>Overseers:</strong> Bishop Dr. Vitalis Odumma &amp; Rev. Grace Odumma</p>
+        <p class="lordscity-lead">The Lord's City Adoration Ground is a multipurpose community project development complex located in Amiri, a growing community in Oru East Local Government Area of Imo State. Positioned near Atta and Ubarazor, the project is designed to serve as a transformative hub for education, healthcare, skills development, commerce, hospitality, and spiritual growth.</p>
+        <p class="lordscity-donate-line">Donation to support this project — <a href="https://pleasegofundme.com/#lords-city-adoration-ground" class="lordscity-donate-link" target="_blank" rel="noopener noreferrer">click this link</a>.</p>
+      </div>
+
+      <div class="row g-5 align-items-start lordscity-about-row">
+        <div class="col-lg-5">
+          <div class="lordscity-info-card">
+            <h3>Location</h3>
+            <p>Amiri Village, Oru East LGA,<br>Imo State, Nigeria</p>
+            <hr>
+            <h3>Overseers</h3>
+            <p>Bishop Dr. Vitalis Odumma<br>&amp; Rev. Grace Odumma</p>
+            <hr>
+            <h3>Support This Project</h3>
+            <p class="lordscity-funding"><strong>£100,000</strong> — Phase one of a £1M community development project.</p>
+            <a href="https://pleasegofundme.com/#lords-city-adoration-ground" class="btn-visit-lordscity tw-hover-btn btn-churche-primary mt-3" target="_blank" rel="noopener noreferrer">Donate to Lord's City<span class="tw-hover-btn-circle-dot"></span></a>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="lordscity-copy">
+            <p class="text-body-mt">Lord's City Adoration Ground is a place of worship, prayer, spiritual renewal and community fellowship where believers gather to experience God's presence, grow in faith and strengthen their relationship with God.</p>
+            <p class="text-body-mt">Through worship services, prayer gatherings, discipleship programmes, counselling and outreach initiatives, Lord's City continues to transform lives and bring hope, encouragement and spiritual growth to individuals, families and communities.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5 pt-3" data-aos="fade-up">
+        <div class="video-carousel">
+          <div class="video-main-wrap">
+            <div class="video-ratio-box">
+              <div class="video-fade-layer" id="video-fade-layer"></div>
+              <video
+                id="main-video"
+                class="carousel-video"
+                controls
+                playsinline
+                muted
+                preload="auto"
+                poster="assets/about3.png"
+              ></video>
+              <div class="video-play-overlay" id="video-play-overlay">
+                <button type="button" class="video-play-btn" id="video-play-btn" aria-label="Play video">▶</button>
+              </div>
+              <div class="video-label">
+                <h3 id="video-title">Lord's City</h3>
+                <p id="video-counter">Video 1 of 4</p>
+              </div>
+              <div class="video-progress">
+                <div class="video-progress-bar" id="video-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-nav">
+            <button type="button" class="video-nav-btn" id="video-prev" aria-label="Previous video">‹</button>
+            <div class="video-dots" id="video-dots"></div>
+            <button type="button" class="video-nav-btn" id="video-next" aria-label="Next video">›</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="location-card">
+        <h3>📍 Visit Us</h3>
+        <p class="text-body-mt" style="margin-top: 0;">Lord's City Adoration Ground,<br>Umuocheta, Amiri,<br>Imo State, Nigeria</p>
+      </div>
+
+      <div class="text-center mt-5">
+        <button type="button" class="btn-visit-lordscity tw-hover-btn btn-churche-primary" data-scroll="contact">Plan Your Visit<span class="tw-hover-btn-circle-dot"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Counselling -->
+  <section id="counselling" class="section-counselling">
+    <div class="container-main">
+      <div class="text-center mb-5">
+        <span class="label-orange">Guidance &amp; Support</span>
+        <h2 class="heading-counselling">Christian Counselling</h2>
+        <p class="text-body-mt" style="max-width: 48rem; margin-left: auto; margin-right: auto;">We provide spiritual guidance, prayer support and confidential counselling to help individuals, couples and families navigate life's challenges through faith, wisdom and God's love.</p>
+      </div>
+
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <div class="counselling-left">
+            <h3 style="font-size: 1.875rem; font-weight: 700; color: #071B34; margin-bottom: 1.5rem;">How We Can Help</h3>
+            <div class="help-item">
+              <div class="help-icon">🙏</div>
+              <div>
+                <h4 style="font-weight: 700; font-size: 1.125rem; color: #071B34;">Prayer Support</h4>
+                <p style="color: #4b5563;">Receive spiritual encouragement and dedicated prayer.</p>
+              </div>
+            </div>
+            <div class="help-item">
+              <div class="help-icon">❤️</div>
+              <div>
+                <h4 style="font-weight: 700; font-size: 1.125rem; color: #071B34;">Family Guidance</h4>
+                <p style="color: #4b5563;">Support for relationships, marriage and family matters.</p>
+              </div>
+            </div>
+            <div class="help-item">
+              <div class="help-icon">✨</div>
+              <div>
+                <h4 style="font-weight: 700; font-size: 1.125rem; color: #071B34;">Spiritual Growth</h4>
+                <p style="color: #4b5563;">Grow deeper in faith through biblical counselling.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="counselling-right">
+            <h3 style="font-size: 1.875rem; font-weight: 700; margin-bottom: 1.5rem;">Need Counselling?</h3>
+            <p style="font-size: 1.125rem; line-height: 2rem; color: #fff7ed;">Our ministry team is available to provide confidential, compassionate and faith-based counselling for individuals and families seeking guidance.</p>
+            <div class="row g-4 mt-4">
+              <div class="col-6"><div class="stat-box"><h4>100+</h4><p class="mt-2 mb-0">Families Supported</p></div></div>
+              <div class="col-6"><div class="stat-box"><h4>24/7</h4><p class="mt-2 mb-0">Prayer Support</p></div></div>
+            </div>
+            <a href="#contact-form" class="btn-request-counselling tw-hover-btn btn-churche-white" data-scroll-focus="contact-subject" data-contact-topic="Counselling Request">Request Counselling<span class="tw-hover-btn-circle-dot"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section-contact">
+    <div class="container-main">
+      <div class="text-center mb-5">
+        <span class="label-orange">Contact Us</span>
+        <h2 class="heading-counselling">Reach Out To Our Ministry</h2>
+        <p class="text-body-mt" style="max-width: 48rem; margin-left: auto; margin-right: auto;">We would love to hear from you. Whether you need prayer, counselling or ministry information, our team is here to help.</p>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="contact-card">
+            <div style="font-size: 2.25rem; margin-bottom: 1rem;">📞</div>
+            <h3 class="text-orange" style="font-weight: 700; font-size: 1.25rem; margin-bottom: 0.75rem;">Call Us</h3>
+            <p style="color: #071B34; font-size: 1.5rem; font-weight: 700; margin: 0;"><a href="tel:+442086179624" class="contact-link">+44 (0)20 8617 9624</a></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-card">
+            <div style="font-size: 2.25rem; margin-bottom: 1rem;">📍</div>
+            <h3 class="text-orange" style="font-weight: 700; font-size: 1.25rem; margin-bottom: 0.75rem;">Visit Us</h3>
+            <p style="color: #071B34; font-size: 1.125rem; font-weight: 700;">Lord's City Adoration Ground,<br>Umuocheta, Amiri,<br>Imo State, Nigeria</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-card">
+            <div style="font-size: 2.25rem; margin-bottom: 1rem;">📧</div>
+            <h3 class="text-orange" style="font-weight: 700; font-size: 1.25rem; margin-bottom: 0.75rem;">Email Us</h3>
+            <p style="color: #071B34; font-size: 1.125rem; font-weight: 700; word-break: break-all; margin: 0;"><a href="mailto:info@lifegraceministries.com" class="contact-link">info@lifegraceministries.com</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="contact-form-wrap" id="contact-form">
+            <form id="contact-form-el" novalidate>
+              <div id="contact-form-status" class="contact-form-status" role="status" aria-live="polite" hidden></div>
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="contact-first-name">First Name</label>
+                  <input type="text" id="contact-first-name" name="first_name" required placeholder="First Name" class="form-input" autocomplete="given-name">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="contact-last-name">Last Name</label>
+                  <input type="text" id="contact-last-name" name="last_name" required placeholder="Last Name" class="form-input" autocomplete="family-name">
+                </div>
+              </div>
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="contact-email">Email Address</label>
+                  <input type="email" id="contact-email" name="email" required placeholder="Email Address" class="form-input" autocomplete="email">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="contact-phone">Phone Number</label>
+                  <input type="tel" id="contact-phone" name="phone" required placeholder="Phone Number" class="form-input" autocomplete="tel">
+                </div>
+              </div>
+              <label class="form-label" for="contact-subject">How can we help?</label>
+              <select id="contact-subject" name="subject" required class="form-input mb-3">
+                <option value="">Select a topic</option>
+                <option value="Counselling Request">Counselling Request</option>
+                <option value="General Enquiry">General Enquiry</option>
+                <option value="Prayer Request">Prayer Request</option>
+                <option value="Events Information">Events Information</option>
+                <option value="Youth Ministry">Youth Ministry</option>
+                <option value="Visit Lord's City">Visit Lord's City</option>
+              </select>
+              <label class="form-label" for="contact-message">Your Message</label>
+              <textarea id="contact-message" name="message" rows="8" required placeholder="Write your message..." class="form-input mb-3"></textarea>
+              <button type="submit" id="contact-submit-btn" class="btn-send tw-hover-btn btn-churche-primary">Send Message<span class="tw-hover-btn-circle-dot"></span></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="map-wrap">
+            <iframe title="Lord's City Location" src="https://maps.google.com/maps?q=Amiri%20Imo%20State%20Nigeria&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-blur footer-blur-1"></div>
+    <div class="footer-blur footer-blur-2"></div>
+    <div class="footer-blur footer-blur-3"></div>
+    <div class="footer-blur footer-blur-4"></div>
+    <div class="footer-blur footer-blur-5"></div>
+
+    <div class="container-main footer-content">
+      <div class="row g-5">
+        <div class="col-md-6 col-lg-3">
+          <h3 class="footer-brand"><span class="logo-brand">LifeGrace</span> Ministries</h3>
+          <p class="footer-desc">A place of faith, worship and spiritual growth. We are committed to sharing God's love and transforming lives through ministry, prayer, discipleship and community service.</p>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <h4 class="footer-heading">Ministries</h4>
+          <ul class="footer-links">
+            <li><a href="#sundayservice">Sunday Service</a></li>
+            <li><a href="#thursdayservice">Thursday Service</a></li>
+            <li><a href="#youthservices">Youth Ministry</a></li>
+            <li><a href="#services">Prayer Meetings</a></li>
+            <li><a href="#services">Bible Study</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <h4 class="footer-heading">Contact Info</h4>
+          <div class="footer-links" style="margin-bottom: 0;">
+            <p>📞 +44 (0)20 8617 9624</p>
+            <p>📧 info@lifegraceministries.com</p>
+            <p>📍 Lord's City Adoration Ground, Umuocheta Amiri, Imo State, Nigeria</p>
+          </div>
+          <div class="d-flex gap-3 mt-4">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon">f</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon">▶</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon">📷</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center mt-5">
+        <button id="scroll-top-btn" class="btn-scroll-top">↑</button>
+      </div>
+
+      <div class="footer-copyright">
+        <p>© 2026 Life Grace Ministries International. All Rights Reserved.</p>
+      </div>
+
+      <div class="dev-credit">
+        <p>Developed by <a href="https://ftsservices.co/" target="_blank" rel="noopener noreferrer">FTS Services Ltd</a> associated with <a href="https://tasmafivesolutions.com/" target="_blank" rel="noopener noreferrer">Tasmafive Solutions LLP</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- AOS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
